@@ -1,0 +1,13 @@
+@import "@seo/core/styles/base.css";
+
+:root {
+  --brand: #0f766e;
+  --focus: #0f766e;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --brand: #2dd4bf;
+    --focus: #2dd4bf;
+  }
+}

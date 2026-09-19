@@ -12,7 +12,9 @@
     "test": "vitest run",
     "typecheck": "npm run typecheck --workspaces --if-present",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "dev:calculadoras": "npm run dev -w sites/calculadoras",
+    "build:calculadoras": "npm run build -w sites/calculadoras"
   },
   "engines": {
     "node": ">=24"

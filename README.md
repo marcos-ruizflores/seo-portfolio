@@ -17,10 +17,12 @@ Requiere Node 24 (`nvm use`).
 ```bash
 npm install
 npm run dev:devtools      # http://localhost:3000
+npm run dev:calculadoras  # http://localhost:3001
 npm test                  # tests unitarios (Vitest)
 npm run lint              # ESLint
 npm run typecheck         # TypeScript
 npm run build:devtools    # export estático en sites/devtools/out
+npm run build:calculadoras
 ```
 
 ## Cómo añadir una herramienta
