@@ -1,0 +1,16 @@
+{
+  "name": "@seo/core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./*": "./src/*"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "next": "*",
+    "react": "*"
+  }
+}

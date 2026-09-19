@@ -1,0 +1,42 @@
+{/* BORRADOR: contenido de prueba de la plantilla. Revisar y ampliar en la fase de contenido (M2) según SEO_RESEARCH.md. */}
+
+## Cómo formatear un JSON
+
+1. Pega tu JSON en el cuadro de entrada.
+2. Elige la sangría: 2 espacios, 4 espacios o tabulador.
+3. Pulsa **Formatear**. Si el JSON tiene un error, verás la línea y la columna exactas donde está.
+4. Copia el resultado con el botón **Copiar**.
+
+Todo el proceso ocurre en tu navegador: el JSON no se envía a ningún servidor, así que puedes usarlo con datos privados o respuestas de APIs internas.
+
+## Ejemplo
+
+Un JSON en una sola línea, como el que devuelven muchas APIs:
+
+```json
+{"nombre":"Ada","lenguajes":["TypeScript","C"],"activo":true}
+```
+
+Formateado con 2 espacios:
+
+```json
+{
+  "nombre": "Ada",
+  "lenguajes": [
+    "TypeScript",
+    "C"
+  ],
+  "activo": true
+}
+```
+
+## Errores más comunes en un JSON
+
+- **Comas finales**: `{"a": 1,}` no es válido. JSON no permite una coma después del último elemento.
+- **Comillas simples**: las claves y los textos deben ir entre comillas dobles (`"a"`, no `'a'`).
+- **Claves sin comillas**: `{a: 1}` es válido en JavaScript, pero no en JSON.
+- **Comentarios**: JSON no admite `//` ni `/* */`.
+
+## Formatear o minificar
+
+Formatear añade sangría y saltos de línea para que el JSON sea fácil de leer. Minificar hace lo contrario: elimina todos los espacios sobrantes para que ocupe lo mínimo, algo útil al enviarlo por red o guardarlo en una variable de entorno.

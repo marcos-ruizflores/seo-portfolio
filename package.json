@@ -1,0 +1,30 @@
+{
+  "name": "seo-portfolio",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "sites/*"
+  ],
+  "scripts": {
+    "dev:devtools": "npm run dev -w sites/devtools",
+    "build:devtools": "npm run build -w sites/devtools",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.20",
+    "@types/node": "^24.13.6",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.3.5",
+    "prettier": "^3.9.8",
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "typescript": "^5.9.3",
+    "vitest": "^5.0.1"
+  }
+}
