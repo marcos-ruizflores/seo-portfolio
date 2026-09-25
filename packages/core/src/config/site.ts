@@ -8,14 +8,14 @@ export type SiteConfig = {
   /** URL absoluta sin barra final, p. ej. https://example.com */
   url: string;
   description: string;
-  /** Código BCP 47 para <html lang>, p. ej. "es" */
+  /** BCP 47 code for <html lang>, e.g. "es" */
   language: string;
-  /** Locale de Open Graph, p. ej. "es_ES" */
+  /** Open Graph locale, e.g. "es_ES" */
   locale: string;
   country: string;
   /**
-   * false en local y en previews (*.pages.dev): robots.txt bloquea todo y cada
-   * página lleva noindex, para que Google no indexe copias duplicadas.
+   * false locally and on previews (*.pages.dev): robots.txt blocks everything and
+   * every page gets noindex, so Google never indexes duplicate copies.
    */
   indexable: boolean;
   themeColor: string;
@@ -25,7 +25,7 @@ export type SiteConfig = {
     twitter?: string;
     github?: string;
   };
-  /** Datos del titular para páginas legales y contacto. Los completa el propietario. */
+  /** Owner details for the legal and contact pages. Filled in by the site owner. */
   owner: {
     name: string;
     email: string;
@@ -45,12 +45,12 @@ export function defineSiteConfig(config: SiteConfig): SiteConfig {
   return { ...config, url: config.url.replace(/\/+$/, "") };
 }
 
-/** Lee la URL pública del entorno de build (NEXT_PUBLIC_SITE_URL). */
+/** Reads the public URL from the build env (NEXT_PUBLIC_SITE_URL). */
 export function siteUrlFromEnv(fallback = "http://localhost:3000"): string {
   return process.env.NEXT_PUBLIC_SITE_URL || fallback;
 }
 
-/** Solo se indexa si el build de producción lo pide explícitamente. */
+/** Only indexable when the production build explicitly asks for it. */
 export function indexableFromEnv(): boolean {
   return process.env.NEXT_PUBLIC_INDEXABLE === "true";
 }

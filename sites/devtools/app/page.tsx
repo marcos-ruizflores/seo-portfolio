@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description: site.description,
     path: "/",
   }),
-  // En la home el título va completo, sin la plantilla "| DevKit".
+  // The home page uses the full title, without the "| DevKit" template.
   title: { absolute: `${site.name}: herramientas online gratis para desarrolladores` },
 };
 

@@ -8,7 +8,7 @@ export type SitemapEntry = {
   priority?: number;
 };
 
-/** Solo se deben pasar páginas indexables: nada de 404, previews ni rutas internas. */
+/** Only pass indexable pages here: no 404, previews or internal routes. */
 export function buildSitemap(site: SiteConfig, entries: SitemapEntry[]): MetadataRoute.Sitemap {
   if (!site.indexable) return [];
 

@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { site } from "@/config/site";
 import { tools } from "@/tools";
 
-// Solo existen las rutas de herramientas registradas; cualquier otra es 404.
+// Only registered tool routes exist, anything else is a 404.
 export const dynamicParams = false;
 
 export function generateStaticParams() {

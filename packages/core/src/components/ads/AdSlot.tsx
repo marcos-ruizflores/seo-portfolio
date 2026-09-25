@@ -4,9 +4,9 @@ export type AdPosition =
   "header" | "content-top" | "content-middle" | "content-bottom" | "sidebar" | "footer";
 
 /**
- * Hueco publicitario. Mientras monetization.adsenseEnabled sea false no
- * renderiza nada (ni espacio reservado). Al activar AdSense, aquí irá el
- * bloque <ins class="adsbygoogle"> con altura mínima fija para evitar CLS.
+ * Ad slot. While monetization.adsenseEnabled is false it renders nothing (not
+ * even reserved space). Once AdSense is on, the <ins class="adsbygoogle"> block
+ * goes here with a fixed min height to avoid CLS.
  */
 export function AdSlot({ site, position }: { site: SiteConfig; position: AdPosition }) {
   const { adsenseEnabled, adsensePublisherId } = site.monetization;

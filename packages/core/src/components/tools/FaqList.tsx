@@ -1,6 +1,6 @@
 import type { Faq } from "../../tools/registry";
 
-/** <details> nativo: accesible por teclado y sin JavaScript. */
+/** Native <details>: keyboard accessible and works without JavaScript. */
 export function FaqList({ items }: { items: Faq[] }) {
   return (
     <div className="divide-y divide-border rounded-lg border border-border bg-surface">

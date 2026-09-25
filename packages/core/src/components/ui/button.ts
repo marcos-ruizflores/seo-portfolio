@@ -9,7 +9,7 @@ const variants: Record<ButtonVariant, string> = {
   ghost: "text-muted hover:bg-surface-muted hover:text-fg",
 };
 
-/** Clases de botón compartidas, para <button> y para <Link>. */
+/** Shared button classes for both <button> and <Link>. */
 export function buttonClass(variant: ButtonVariant = "primary"): string {
   return `${base} ${variants[variant]}`;
 }

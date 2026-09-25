@@ -1,11 +1,11 @@
 /*
- * Estilos base compartidos por todas las webs del portfolio.
- * Cada web importa este fichero y solo redefine --brand (y --brand-fg si hace falta).
+ * Base styles shared by every site in the portfolio.
+ * Each site imports this file and only overrides --brand (and --brand-fg if needed).
  */
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-/* Tailwind debe escanear los componentes compartidos del paquete core. */
+/* Tailwind needs to scan the shared components in the core package. */
 @source "../";
 
 :root {

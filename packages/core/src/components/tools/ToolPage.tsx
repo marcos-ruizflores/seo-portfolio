@@ -10,8 +10,8 @@ import { ToolCard } from "./ToolCard";
 export type RelatedArticle = { title: string; path: string };
 
 /**
- * Landing completa de una herramienta: H1, intro, herramienta, contenido
- * editorial, FAQ y enlaces internos. Todas las herramientas usan esta plantilla.
+ * Full landing page for a tool: H1, intro, the tool itself, editorial content,
+ * FAQ and internal links. Every tool uses this template.
  */
 export function ToolPage({
   site,
@@ -24,7 +24,7 @@ export function ToolPage({
   tool: ToolDefinition;
   relatedTools: ToolDefinition[];
   relatedArticles?: RelatedArticle[];
-  /** Valor schema.org, p. ej. "DeveloperApplication" o "FinanceApplication". */
+  /** schema.org value, e.g. "DeveloperApplication" or "FinanceApplication". */
   applicationCategory: string;
 }) {
   const { Component, Content } = tool;

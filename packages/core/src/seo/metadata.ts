@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import type { SiteConfig } from "../config/site";
 
-/** URL canónica absoluta, sin barra final salvo en la home. */
+/** Absolute canonical URL, no trailing slash except on the home page. */
 export function canonicalUrl(site: SiteConfig, path: string): string {
   const clean = ("/" + path.replace(/^\/+/, "")).replace(/\/+$/, "");
   return clean === "" ? `${site.url}/` : `${site.url}${clean}`;
 }
 
-/** Metadata base para el layout raíz: plantilla de títulos, verificación, robots. */
+/** Base metadata for the root layout: title template, verification, robots. */
 export function rootMetadata(site: SiteConfig): Metadata {
   return {
     metadataBase: new URL(site.url),
@@ -31,7 +31,7 @@ export function rootMetadata(site: SiteConfig): Metadata {
 }
 
 export type PageSeo = {
-  /** Título sin el nombre del sitio: la plantilla del layout lo añade. */
+  /** Title without the site name, the layout template adds it. */
   title: string;
   description: string;
   path: string;
@@ -44,7 +44,7 @@ export type PageSeo = {
   };
 };
 
-/** Metadata de una página concreta. Toda página debería pasar por aquí. */
+/** Metadata for a single page. Every page should go through this. */
 export function buildMetadata(site: SiteConfig, page: PageSeo): Metadata {
   const url = canonicalUrl(site, page.path);
   const noindex = page.noindex || !site.indexable;

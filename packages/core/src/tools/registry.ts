@@ -6,27 +6,27 @@ export type Faq = {
 };
 
 export type ToolDefinition = {
-  /** Ruta pública: /{slug}. Minúsculas y guiones. */
+  /** Public route: /{slug}. Lowercase and hyphens. */
   slug: string;
-  /** Nombre corto para tarjetas y enlaces. */
+  /** Short name for cards and links. */
   name: string;
-  /** Título SEO (sin el nombre del sitio). */
+  /** SEO title (without the site name). */
   title: string;
-  /** Meta description: 120–160 caracteres. */
+  /** Meta description: 120-160 characters. */
   description: string;
   h1: string;
-  /** Párrafo bajo el H1: qué hace la herramienta, en una o dos frases. */
+  /** Paragraph under the H1: what the tool does, in one or two sentences. */
   intro: string;
   category: string;
   keywords: string[];
   faq: Faq[];
   relatedTools: string[];
   relatedArticles: string[];
-  /** Fecha ISO de la última revisión del contenido. */
+  /** ISO date of the last content review. */
   updatedAt: string;
-  /** Interfaz interactiva (client component). */
+  /** Interactive UI (client component). */
   Component: ComponentType;
-  /** Contenido editorial: cómo funciona, ejemplos, información adicional (MDX). */
+  /** Editorial content: how it works, examples, extra info (MDX). */
   Content: ComponentType;
 };
 
@@ -40,9 +40,9 @@ export type ToolRegistry = {
 const SLUG_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
 /**
- * Crea el registro y valida su coherencia: slugs únicos y bien formados, y
- * relatedTools que apunten a herramientas existentes. Falla en build/test
- * en vez de publicar enlaces rotos.
+ * Builds the registry and checks it's consistent: unique, well formed slugs and
+ * relatedTools that point to tools that exist. Fails at build/test time instead
+ * of shipping broken links.
  */
 export function createToolRegistry(
   tools: ToolDefinition[],

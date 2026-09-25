@@ -2,7 +2,7 @@ import createMDX from "@next/mdx";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Export estático: HTML puro servido por Cloudflare Pages, sin servidor.
+  // Static export: plain HTML served by Cloudflare Pages, no server.
   output: "export",
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   transpilePackages: ["@seo/core"],

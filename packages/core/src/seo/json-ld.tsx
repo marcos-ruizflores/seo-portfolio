@@ -3,7 +3,7 @@ import { canonicalUrl } from "./metadata";
 
 type JsonLdObject = Record<string, unknown>;
 
-/** Serializa JSON-LD escapando "<" para que no se pueda cerrar el <script>. */
+/** Serializes JSON-LD escaping "<" so nothing can close the <script> tag. */
 export function serializeJsonLd(data: JsonLdObject | JsonLdObject[]): string {
   return JSON.stringify(data).replace(/</g, "\\u003c");
 }

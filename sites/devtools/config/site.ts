@@ -1,7 +1,7 @@
 import { defineSiteConfig, indexableFromEnv, siteUrlFromEnv } from "@seo/core/config/site";
 
-// Único sitio donde vive la identidad de esta web. El nombre es provisional
-// hasta elegir dominio.
+// Single place for this site's identity. The name is a placeholder until the
+// domain is picked.
 export const site = defineSiteConfig({
   name: "DevKit",
   url: siteUrlFromEnv(),
@@ -23,7 +23,7 @@ export const site = defineSiteConfig({
   monetization: { adsenseEnabled: false },
 });
 
-/** Rutas propias del sitio que ninguna herramienta puede usar como slug. */
+/** Site routes no tool is allowed to use as its slug. */
 export const reservedSlugs = [
   "blog",
   "herramientas",

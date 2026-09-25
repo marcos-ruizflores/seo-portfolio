@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { SiteConfig } from "../../config/site";
 import { breadcrumbJsonLd, JsonLd, type Crumb } from "../../seo/json-ld";
 
-/** Migas de pan visibles + su BreadcrumbList en JSON-LD. La última es la página actual. */
+/** Visible breadcrumbs plus their BreadcrumbList JSON-LD. The last one is the current page. */
 export function Breadcrumbs({ site, crumbs }: { site: SiteConfig; crumbs: Crumb[] }) {
   return (
     <>

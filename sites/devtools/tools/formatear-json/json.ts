@@ -4,7 +4,7 @@ export type JsonError = { message: string; line?: number; column?: number };
 
 export type JsonResult = { ok: true; output: string } | { ok: false; error: JsonError };
 
-/** Convierte un índice de carácter en línea/columna (1-indexadas). */
+/** Turns a character index into line/column (both 1-based). */
 export function positionToLineColumn(text: string, position: number) {
   const lines = text.slice(0, position).split("\n");
   return { line: lines.length, column: (lines.at(-1)?.length ?? 0) + 1 };
@@ -20,9 +20,9 @@ class SyntaxErrorAt extends Error {
 }
 
 /**
- * Recorre el texto siguiendo la gramática JSON solo para localizar el primer
- * error con un mensaje en español. Los mensajes de JSON.parse cambian según
- * el navegador y a veces no incluyen la posición.
+ * Walks the text following the JSON grammar just to find the first error and
+ * report it in Spanish. JSON.parse messages differ between browsers and
+ * sometimes don't include the position.
  */
 export function findJsonError(text: string): JsonError | null {
   let i = 0;
@@ -41,7 +41,7 @@ export function findJsonError(text: string): JsonError | null {
   };
 
   const parseString = () => {
-    i++; // comilla de apertura
+    i++; // opening quote
     while (i < text.length) {
       const char = text[i]!;
       if (char === '"') {
